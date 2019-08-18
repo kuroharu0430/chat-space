@@ -11,7 +11,7 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+* Database creation　
 
 * Database initialization
 
@@ -42,8 +42,8 @@ Things you may want to cover:
 
 
 ## Association
--has_many :groups ,through: :groups_users
--has_many :massages
+- has_many :groups ,through: :groups_users
+- has_many :massages
 
 ## groupsテーブル
 |column|type|options|
@@ -52,8 +52,8 @@ Things you may want to cover:
 |message_id|integer|null: false, foreign_key :true|
 
 ## Association
--has_many :users ,through: :groups_users
--has_many :massages
+- has_many :users ,through: :groups_users
+- has_many :massages
 
 ## messagesテーブル
 |column|type|options|
@@ -65,5 +65,5 @@ Things you may want to cover:
 |user_id|integer|null: false, foreigner_key: true|
 
 ## Association
--belongs_to :group
--belongs_to :user
+- belongs_to :group
+- belongs_to :user
