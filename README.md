@@ -11,7 +11,7 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+* Database creation　
 
 * Database initialization
 
@@ -21,4 +21,47 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+##　groups_usersテーブル
+|column|type|options|
+|------|----|-------|
+|user|references|null: false ,foreign_key: true|
+|group|references|null: false ,foreign_key: true|
+
+##　Association
+- belongs_to :group
+- belongs_to :user
+
+## usersテーブル
+|column|type|options|
+|------|----|-------|
+|name|string|null: false, unique: true, index: true|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
+
+
+## Association
+- has_many :groups ,through: :groups_users
+- has_many :massages
+- has_many :groups_users
+
+## groupsテーブル
+|column|type|options|
+|------|----|-------|
+|name|string|  |
+
+## Association
+- has_many :users ,through: :groups_users
+- has_many :massages
+- has_many :groups_users
+
+## messagesテーブル
+|column|type|options|
+|------|----|-------|
+|body|text|  |
+|image|string|  |
+|group|references|null: false, foreigner_key: true|
+|user|references|null: false, foreigner_key: true|
+
+## Association
+- belongs_to :group
+- belongs_to :user
