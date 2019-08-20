@@ -1,0 +1,145 @@
+$white: #fff;
+$grey: #999;
+$black: #434a54;
+$blue:#38aef0;
+
+@mixin box($background-color, $height, $side-padding){
+  background-color:$background-color;
+  padding:0 $side-padding;
+  height :$height;
+}
+
+@mixin font($font-size, $font-weight, $color){
+  font-size:$font-size;
+  font-weight:$font-weight;
+  color:$color;
+}
+
+@mixin header_flex{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.body{
+  display: flex;
+}
+
+.flash-notice{
+  width: 100%;
+  position: fixed;
+  z-index:10;
+  background-color: $blue;
+  text-align: center;
+  color:$white;
+}
+.leftcontent{
+  width: 300px;
+
+  &__header{
+    @include box(#253141, 15vh, 20px);
+    line-height:20vh;
+    @include header_flex; 
+    p{
+      @include font(16px, bold, $white);
+    }
+    li{
+      float: left; 
+      .fa{
+        color:#fff;
+      }
+    }
+  }
+  &__main{
+    @include box(#2f3e51, 85vh, 20px);
+    &-groupname{
+      @include font(15px, bold, $white);
+      padding: 20px 0 5px;
+    }
+    &-message{
+      @include font(11px, normal, $white);
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.rightcontent{
+  width: calc(100vw - 300px);
+  &__header{
+    @include box(#fafafa,15vh,40px);
+    border-bottom: solid 1px #eee;
+    @include header_flex;
+    &--group{
+      &-groupname{
+        @include font(20px, normal ,#333);
+        margin: 35px 0 15px;
+      }
+      &-member{
+        @include font(12px, normal, $grey);
+      }
+    }
+    &--edit{
+      background-color:$white;
+      border:solid 2px $blue;
+      color:$blue;
+      padding:0 20px;
+      height:40px;
+      line-height:40px;
+      margin-top:28px;
+    }
+  }
+  &__main{
+    @include box(#fafafa,85vh,40px);
+    padding: 46px 40px 40px;
+    &-heading{
+      display: flex;
+      padding-bottom: 10px;
+      &-name{
+        @include font(16px, bold, $black);
+      }
+      &-date{
+        @include font(12px, normal, $grey);
+        padding-left:10px;
+      }
+    }
+    &-message{
+      @include font(14px, normal, $black);
+    }
+  }
+  &--form{
+    position:fixed;
+    bottom:0;
+    z-index:10;
+    background-color: $grey;
+    width:1140px;
+    padding:20px;
+    display:flex;
+    
+    &--wrapper{
+      width:87%;
+      display:flex;
+      align-items:center;
+      background-color:$white;
+      height:50px;
+      &-input{
+        border:none;
+        width:100%;
+        height:50px;
+        &::placeholder{
+          padding-left: 15px;
+          @include font(16px, normal, $grey)
+        }
+      }
+      &-image{
+        padding-right:10px;
+      }
+    }
+    &--submit{
+      background-color:$blue;
+      color:$white;
+      border:none;
+      margin:0 40px 0 15px;
+      width: 100px;
+    }
+  }
+}
