@@ -1,33 +1,22 @@
 .body
-  .flash-notice
-    %p グループを作成しました
   .leftcontent
-    .leftcontent__header
-      %p name
-      %ul
-        %li
-          =link_to "" do
-            = fa_icon 'edit'
-        %li
-          =link_to "" do
-            =fa_icon "cog"
-    .leftcontent__main
-      %p.leftcontent__main-groupname group
-      %P.leftcontent__main-message message
+    =render './layouts/side_bar'
   .rightcontent
     .rightcontent__header
       .rightcontent__header--group
-        %p.rightcontent__header--group-groupname group
+        %p.rightcontent__header--group-groupname 
+          =@group.name
         %p.rightcontent__header--group-member menber:name
-      =link_to("Edit" , "" ,class:"rightcontent__header--edit")
+      =link_to("Edit" , edit_group_path(current_user) ,class:"rightcontent__header--edit")
     .rightcontent__main
-      .rightcontent__main-heading
-        %p.rightcontent__main-heading-name name
-        %p.rightcontent__main-heading-date 2019/08/19
-      %p.rightcontent__main-message message
-    %form{:action=>"/", :method=>"post", class: "rightcontent--form"}
-      .rightcontent--form--wrapper
-        %input{:name=>"message", class: "rightcontent--form--wrapper-input",placeholder:"type a message"}
-        = fa_icon 'image',class:"rightcontent--form--wrapper-image"
-      %input{type:"submit", value: "Send", class:"rightcontent--form--submit"}
+      = render @messages
+
+    =form_for [@group, @message] do |f|
+      .rightcontent--form
+        .rightcontent--form--wrapper
+          =f.text_field :content, class: "rightcontent--form--wrapper-input",placeholder:"type a message"
+          =f.label :image, class: 'rightcontent--form--wrapper-image' do
+            = fa_icon 'image'
+            =f.file_field :image, class: 'hidden'
+        =f.submit "Send", class:"rightcontent--form--submit"
 

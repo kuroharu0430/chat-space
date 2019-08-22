@@ -1,0 +1,18 @@
+.leftcontent
+  .leftcontent__header
+    %p 
+      =current_user.name
+    %ul
+      %li
+        =link_to new_group_path do
+          = fa_icon 'edit'
+      %li
+        =link_to edit_user_path(current_user) do
+          =fa_icon "cog"
+  .leftcontent__main
+    -current_user.groups.each do |group|
+      =link_to '' do
+        %p.leftcontent__main-groupname 
+          =group.name
+        %P.leftcontent__main-message
+          = group.show_last_message

@@ -21,13 +21,13 @@ Things you may want to cover:
 
 * Deployment instructions
 
-##　groups_usersテーブル
+## groups_usersテーブル
 |column|type|options|
 |------|----|-------|
 |user|references|null: false ,foreign_key: true|
 |group|references|null: false ,foreign_key: true|
 
-##　Association
+## Association
 - belongs_to :group
 - belongs_to :user
 
@@ -47,7 +47,7 @@ Things you may want to cover:
 ## groupsテーブル
 |column|type|options|
 |------|----|-------|
-|name|string|  |
+|name|string|null ,false|
 
 ## Association
 - has_many :users ,through: :groups_users

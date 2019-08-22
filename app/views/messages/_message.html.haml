@@ -1,0 +1,11 @@
+.rightcontent__main-heading
+  %p.rightcontent__main-heading-name 
+    =message.user.name
+  %p.rightcontent__main-heading-date 
+    =message.created_at.strftime("%Y/%m/%d %H:%M")
+.rightcontent__main-message
+  -if message.content.present?
+    =message.content
+  .rightcontent__main-message--image
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
