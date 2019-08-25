@@ -98,7 +98,6 @@ $blue:#38aef0;
   }
   &__main{
     overflow: scroll;
-    // height:50px;
     @include box(#fafafa,85vh,40px);
     padding: 46px 40px 40px;
     &-heading{
