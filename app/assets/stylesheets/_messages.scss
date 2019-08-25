@@ -35,8 +35,11 @@ $blue:#38aef0;
 }
 .leftcontent{
   width: 300px;
-
+  height:100vh;  
+  background-color:#2f3e51;
   &__header{
+    width: 260px;
+    position:fixed;
     @include box(#253141, 15vh, 20px);
     line-height:20vh;
     @include header_flex; 
@@ -51,6 +54,8 @@ $blue:#38aef0;
     }
   }
   &__main{
+    overflow: scroll;
+    height:100vh;
     @include box(#2f3e51, 85vh, 20px);
     &-groupname{
       @include font(15px, bold, $white);
@@ -65,8 +70,10 @@ $blue:#38aef0;
 
 .rightcontent{
   width: calc(100vw - 300px);
-  height:100vh;
   &__header{
+    width: calc(100vw - 300px - 80px);
+    position:fixed;
+    top:0;
     @include box(#fafafa,15vh,40px);
     border-bottom: solid 1px #eee;
     @include header_flex;
@@ -90,6 +97,8 @@ $blue:#38aef0;
     }
   }
   &__main{
+    overflow: scroll;
+    // height:50px;
     @include box(#fafafa,85vh,40px);
     padding: 46px 40px 40px;
     &-heading{
@@ -106,16 +115,11 @@ $blue:#38aef0;
     &-message{
       @include font(14px, normal, $black);
       padding-bottom:40px;
-      --image{
-        height:150px;
-        weight:200px;
-      }
     }
   }
   &--form{
     position:fixed;
     bottom:0;
-    z-index:10;
     background-color: $grey;
     width:calc(100vw - 300px);
     padding:20px;
@@ -156,4 +160,9 @@ $blue:#38aef0;
 
 .field_with_errors{
   width: 100%;
+}
+
+.lower-message__image{
+  height:150px;
+  width:200px;
 }
