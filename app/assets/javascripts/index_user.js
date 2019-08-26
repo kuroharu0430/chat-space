@@ -45,11 +45,9 @@ $(document).on("turbolinks:load", function(){
 
   $('#user-search-result').on("click", ".user-search-add", function(e){
     e.preventDefault();
-    console.log(this);
     $(this).parent().remove();
     var user_id=$(this).attr("data-user-id")
     var user_name =$(this).attr("data-user-name")
-    console.log(user_name)
 
     removeUser(user_id,user_name);
   });
