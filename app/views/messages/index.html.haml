@@ -6,8 +6,12 @@
       .rightcontent__header--group
         %p.rightcontent__header--group-groupname 
           =@group.name
-        %p.rightcontent__header--group-member menber:name
-      =link_to("Edit" , edit_group_path(current_user) ,class:"rightcontent__header--edit")
+        %p.rightcontent__header--group-member Menber:
+        %ul
+          -@group.users.each do |user|
+            %li #{user.name}
+
+      =link_to("Edit" , edit_group_path(@group) ,class:"rightcontent__header--edit")
     .rightcontent__main
       = render @messages
 
