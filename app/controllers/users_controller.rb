@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
-    @users=@users.reject{|user| user == current_user}
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").reject{|user| user == current_user}
     respond_to do |format|
       format.html
       format.json
