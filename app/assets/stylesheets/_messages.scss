@@ -39,7 +39,6 @@ $blue:#38aef0;
   background-color:#2f3e51;
   &__header{
     width: 260px;
-    position:fixed;
     @include box(#253141, 15vh, 20px);
     line-height:20vh;
     @include header_flex; 
@@ -55,7 +54,6 @@ $blue:#38aef0;
   }
   &__main{
     overflow: scroll;
-    height:100vh;
     @include box(#2f3e51, 85vh, 20px);
     &-groupname{
       @include font(15px, bold, $white);
@@ -72,8 +70,6 @@ $blue:#38aef0;
   width: calc(100vw - 300px);
   &__header{
     width: calc(100vw - 300px - 80px);
-    position:fixed;
-    top:0;
     @include box(#fafafa,15vh,40px);
     border-bottom: solid 1px #eee;
     @include header_flex;
@@ -83,6 +79,14 @@ $blue:#38aef0;
         margin: 35px 0 15px;
       }
       &-member{
+        @include font(12px, normal, $grey);
+        float:left;
+      }
+      ul{
+        float:left
+      }
+      li{
+        padding-left:10px;
         @include font(12px, normal, $grey);
       }
     }
@@ -98,6 +102,7 @@ $blue:#38aef0;
   }
   &__main{
     overflow: scroll;
+    margin-bottom: 90px;
     @include box(#fafafa,85vh,40px);
     padding: 46px 40px 40px;
     &-heading{

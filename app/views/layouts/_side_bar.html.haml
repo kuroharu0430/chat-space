@@ -11,7 +11,7 @@
           =fa_icon "cog"
   .leftcontent__main
     -current_user.groups.each do |group|
-      =link_to '' do
+      =link_to group_messages_path(group) do
         %p.leftcontent__main-groupname 
           =group.name
         %P.leftcontent__main-message
