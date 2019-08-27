@@ -18,13 +18,17 @@ $(document).on("turbolinks:load", function(){
   $('#user-search-field').on("input",function(e){
     e.preventDefault();
     var input = $('#user-search-field').val();
-
+    if (input == ""){
+      e.preventDefault();
+      $('#user-search-result').empty();
+    }else{
     $.ajax({
       type: 'get',
       url: '/users',
       data: {keyword: input},
       dataType: 'json'
     })
+   
 
     .done(function(users){
       $('#user-search-result').empty();
@@ -39,6 +43,7 @@ $(document).on("turbolinks:load", function(){
     .fail(function(){
       alert('検索に失敗しました')
     });
+    }
   });
 
 
