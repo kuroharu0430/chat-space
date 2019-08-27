@@ -39,7 +39,6 @@ $blue:#38aef0;
   background-color:#2f3e51;
   &__header{
     width: 260px;
-    // position:fixed;
     @include box(#253141, 15vh, 20px);
     line-height:20vh;
     @include header_flex; 
@@ -101,7 +100,7 @@ $blue:#38aef0;
   }
   &__main{
     overflow: scroll;
-    margib-bottom: 90px;
+    margin-bottom: 90px;
     @include box(#fafafa,85vh,40px);
     padding: 46px 40px 40px;
     &-heading{
