@@ -9,7 +9,8 @@
         %p.rightcontent__header--group-member Menber:
         %ul 
           -@group.users.each do |user|
-            =user.name
+            %ul
+              %li= user.name
 
       =link_to("Edit" , edit_group_path(@group) ,class:"rightcontent__header--edit")
     .rightcontent__main

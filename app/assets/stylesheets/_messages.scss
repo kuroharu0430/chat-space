@@ -83,7 +83,9 @@ $blue:#38aef0;
         float:left;
       }
       ul{
-        float:left;
+        float:left
+      }
+      li{
         padding-left:10px;
         @include font(12px, normal, $grey);
       }
