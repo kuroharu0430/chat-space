@@ -22,7 +22,7 @@ $(function(){
     return html;
   }
   
-  var reloadMessages = function(){
+  var reloadMessages = function(e){
     var last_message_id = $('.rightcontent__main-heading:last').attr("data-message-id")
     if (last_message_id){
     $.ajax({
