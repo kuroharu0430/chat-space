@@ -1,4 +1,4 @@
-.rightcontent__main-heading
+.rightcontent__main-heading{"data-message-id"=>"#{message.id}"}
   %p.rightcontent__main-heading-name 
     =message.user.name
   %p.rightcontent__main-heading-date 
@@ -8,4 +8,3 @@
     =message.content
   .rightcontent__main-message--image
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-

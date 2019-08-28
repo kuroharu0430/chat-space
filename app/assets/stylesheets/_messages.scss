@@ -104,7 +104,8 @@ $blue:#38aef0;
     overflow: scroll;
     margin-bottom: 90px;
     @include box(#fafafa,85vh,40px);
-    padding: 46px 40px 40px;
+    height:calc(78vh - 90px);
+    padding: 46px 40px 0px;
     &-heading{
       display: flex;
       padding-bottom: 10px;
