@@ -46,8 +46,6 @@ $(document).on("turbolinks:load", function(){
     }
   });
 
-
-
   $('#user-search-result').on("click", ".user-search-add", function(e){
     e.preventDefault();
     $(this).parent().remove();

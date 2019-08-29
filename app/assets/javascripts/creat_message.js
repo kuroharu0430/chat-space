@@ -40,7 +40,7 @@ $(document).on("turbolinks:load", function(){
     .done(function(data){
       var html =buildHTML(data);
       $('.rightcontent__main').append(html);
-
+      
       $('.rightcontent__main').animate({
         scrollTop:$('.rightcontent__main').get(0).scrollHeight});
         $('.rightcontent--form--submit').attr('disabled', false);
