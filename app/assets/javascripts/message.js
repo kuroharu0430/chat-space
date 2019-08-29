@@ -23,8 +23,10 @@ $(function(){
   }
   
   var reloadMessages = function(e){
-    var last_message_id = $('.rightcontent__main-heading:last').attr("data-message-id")
-    if (last_message_id){
+    var last_message_id = $('.rightcontent__main-heading:last').attr("data-message-id");
+    
+    if (window.location.href.match(/\/groups\/\d+\/messages/))
+    {
     $.ajax({
       url: './api/messages',
       type: 'get',

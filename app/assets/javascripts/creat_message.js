@@ -44,6 +44,7 @@ $(document).on("turbolinks:load", function(){
       $('.rightcontent__main').animate({
         scrollTop:$('.rightcontent__main').get(0).scrollHeight});
         $('.rightcontent--form--submit').attr('disabled', false);
+        $('.rightcontent--form--wrapper-input').val('')
     })
     .fail(function(){
         alert('error');
